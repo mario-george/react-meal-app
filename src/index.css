@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  body {
+    @apply bg-slate-500 mt-5;
+  }
+}
+#checkout {
+  @apply h-[20rem];
+}
+#checkout p {
+  @apply text-red-500 ;
+}
+
+#checkout input {
+  @apply border-2 px-4 py-1 w-1/2 rounded-2xl text-black;
+}
+#checkout label {
+  @apply font-bold text-xl;
+}
+#checkout .invalid {
+  @apply bg-red-500/50  border-2 border-black text-black; 
+}
