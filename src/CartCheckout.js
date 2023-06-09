@@ -58,8 +58,11 @@ const CartCheckout = (props) => {
   return (
     <form
       id="checkout"
-      className="flex flex-col gap-5 overflow-y-scroll"
+      className="flex flex-col gap-5 "
       onSubmit={submitHandler}>
+        <div className="overflow-y-scroll">
+
+
       <label htmlFor="name">Name</label>
       <input
         ref={nameRef}
@@ -95,6 +98,7 @@ const CartCheckout = (props) => {
         className={cityInputNotValid}
       />
       {!formIsValid.cityIsValid && <p>Please Enter a non-empty city</p>}
+        </div>
       <div className="flex gap-8 justify-end">
         <button
           className=" border border-orange-500 bg-orange-500 font-bold text-center hover:text-white hover:bg-orange-700 duration-200 rounded-2xl px-8 py-2"
