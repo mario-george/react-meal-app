@@ -31,7 +31,7 @@ const ModalOverlay = (props) => {
   }
   return (
     <div className="fixed w-full h-[100vw] justify-center items-center  z-40 mx-auto translate-x-[25rem] translate-y-[10rem] overflow-hidden">
-      <div className="flex flex-col gap-5 rounded-lg    bg-white  w-[50%] p-5  text-black">
+      <div className="flex flex-col gap-3 rounded-lg    bg-white  w-[50%] p-5  text-black">
         <div className="flex flex-row justify-start">
           {props.items.length ? (
             <div className="text-xl  w-full  overflow-x-hidden ">
@@ -46,7 +46,7 @@ const ModalOverlay = (props) => {
                 };
 
                 return (
-                  <div className="flex flex-col gap-6">
+                  <div className="flex flex-col gap-3">
                     <div className="flex justify-between items-center">
                       <div className="flex gap-3 flex-col">
                         <div className="font-bold text-2xl">{item.name}</div>
@@ -85,7 +85,9 @@ const ModalOverlay = (props) => {
           <p className="font-bold text-2xl">{props.totalAmount.toFixed(2)}$</p>
         </div>
         {isCheckout && <CartCheckout onConfirm={confimCheckoutHandler} onCancel={cancelCheckoutHandler} />}
-        { !isCheckout && <div className="flex justify-end gap-5">
+        <div className="flex justify-end gap-5">
+
+        { !isCheckout && <div >
            <button
             className="border-2 border-orange-500 bg-white px-5 py-1 text-orange-500 rounded-2xl"
             onClick={props.onCloseCart}>
@@ -95,6 +97,7 @@ const ModalOverlay = (props) => {
             Order
           </button>
         </div>}
+        </div>
       </div>
     </div>
   );

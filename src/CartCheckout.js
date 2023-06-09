@@ -58,48 +58,75 @@ const CartCheckout = (props) => {
   return (
     <form
       id="checkout"
-      className="flex flex-col gap-5 "
+      className="flex flex-col    m-0 "
       onSubmit={submitHandler}>
+        
         <div className="overflow-y-scroll">
 
+        
+                <div className="grid grid-rows-4 grid-cols-12  gap-5">
 
-      <label htmlFor="name">Name</label>
+
+      <label htmlFor="name" className='col-span-1'>Name</label>
+      <div className='col-span-11 w-full '>
+
       <input
         ref={nameRef}
         type="text"
         id="name"
         className={nameInputNotValid}
+        
       />
-      {!formIsValid.nameIsValid && <p>Please Enter a non-empty name</p>}
+      </div>
 
-      <label htmlFor="street">Street</label>
+      <label htmlFor="street" className='col-span-1'>Street</label>
+      <div className='col-span-11 w-full '>
+
+
       <input
         ref={streetRef}
         type="text"
         id="street"
         className={streetInputNotValid}
       />
-      {!formIsValid.streetIsValid && <p>Please Enter a non-empty street</p>}
-      <label htmlFor="postalCode">Postal Code</label>
+      </div>
+      <label htmlFor="postalCode" className='col-span-1'>Postal Code</label>
+
+
+      <div className='col-span-11 w-full '>
+
       <input
         ref={postalCodeRef}
         type="text"
         id="postalCode"
         className={postalCodeInputNotValid}
       />
-      {!formIsValid.postalCodeIsValid && (
-        <p>Please Enter a valid postal code of 5 numbers</p>
-      )}
-      <label htmlFor="city">City</label>
+      </div>
+    
+      <label htmlFor="city" className='col-span-1'>City</label>
+      <div className='col-span-11 w-full '>
+
+        
       <input
         ref={cityRef}
         type="text"
         id="city"
-        className={cityInputNotValid}
+        className={`${cityInputNotValid}`}
       />
-      {!formIsValid.cityIsValid && <p>Please Enter a non-empty city</p>}
+      </div>
         </div>
-      <div className="flex gap-8 justify-end">
+      <div className="flex flex-col ">
+
+
+      {!formIsValid.cityIsValid && <p>Please Enter a non-empty city</p>}
+      {!formIsValid.postalCodeIsValid && (
+        <p>Please Enter a valid postal code of 5 numbers</p>
+      )}
+      {!formIsValid.streetIsValid && <p>Please Enter a non-empty street</p>}
+      {!formIsValid.nameIsValid && <p>Please Enter a non-empty name</p>}
+      </div>
+        </div>
+      <div className="flex gap-8 justify-end m-0">
         <button
           className=" border border-orange-500 bg-orange-500 font-bold text-center hover:text-white hover:bg-orange-700 duration-200 rounded-2xl px-8 py-2"
           type="button"
